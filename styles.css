@@ -2,7 +2,7 @@ body {
     background: #EFEFF7;
 }
 
-span.defined {
+.definition .defined {
     color:red;
     font-weight: bold;
     font-style: italic;
@@ -32,3 +32,9 @@ blockquote.definition ol > li:before {
   font-weight: bold;
   font-style: italic;  
 }
+
+.hasdefinition {
+    border-bottom: 2px dotted;
+    font-style: italic;
+}
+
