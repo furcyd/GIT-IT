@@ -1,16 +1,14 @@
 /*jshint esversion: 6 */
 
-var def = [];
-def[1] = formatDef(1,"this is some text");
-def[2] = formatDef(2,"this is some more text");
-def[3] = formatDef(3,"this is some other text");
 var shown = [];
 
-function formatDef(n,text)
+function formatDef(n)
 {
-    return "<strong>Def. " + n + "</strong>:<br />" +
-	"<blockquote>" + text + "</blockquote>";    
+    var html = '<p class="header"><strong>Def. ' + n + ':</strong><span class="page">[Page '  + defs[n].page + ']</span></p>' +
+    	'<blockquote class="definition">' + defs[n].text + '</blockquote>';
+    return html;
 }
+
 function init() {
     var words = document.getElementsByTagName("span");    
     for( var i = 0; i < words.length; i++) {
@@ -39,8 +37,10 @@ function insert(newdiv, existingNode) {
     newdiv.style.zIndex = "100";    
     newdiv.addEventListener('mouseleave', e => { hideDef(newdiv); });
     existingNode.parentNode.appendChild(newdiv);
-    hideAllOthers();    
+    hideAllOthers();
+    MathJax.Hub.Typeset();
     shown.push(newdiv);
+
 }
 
 
@@ -61,7 +61,7 @@ function showDef(word) {
 	    break;
 	}
     }
-    newdiv.innerHTML = def[defnum];
+    newdiv.innerHTML = formatDef(defnum);
     insert(newdiv, word);
 }
 

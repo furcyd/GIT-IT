@@ -1,3 +1,34 @@
 body {
     background: #EFEFF7;
 }
+
+span.defined {
+    color:red;
+    font-weight: bold;
+    font-style: italic;
+}
+
+p.header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-left: 20px;    
+	
+}
+
+p.header span {
+    font-style: italic;
+}
+
+blockquote.definition ol {
+  counter-reset: list;
+}
+blockquote.definition ol > li {
+  list-style: none;
+}
+blockquote.definition ol > li:before {
+  content: "(" counter(list, lower-alpha) ") ";
+  counter-increment: list;
+  font-weight: bold;
+  font-style: italic;  
+}
