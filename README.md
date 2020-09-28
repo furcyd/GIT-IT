@@ -18,5 +18,5 @@ Uses HTML, CSS, and JavaScript
 
 Deploying
 =================
-Open gitit.html in your browser
+Open git-it.html in your browser
 
