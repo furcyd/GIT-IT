@@ -28,10 +28,11 @@ function insert(newdiv, existingNode) {
     var rect = existingNode.getBoundingClientRect();
     newdiv.style.position = "fixed";
     newdiv.style.width = "600px";
-    newdiv.style.top = rect.bottom;
-    newdiv.style.left = rect.left + "px";
+    newdiv.style.top = (rect.top - 3) + "px";
+    newdiv.style.left = (rect.left - 620) + "px";    
+    //newdiv.style.left = rect.left + "px";
     newdiv.style.backgroundColor = "#FFFFFF";
-    newdiv.style.border = "1px dashed black";
+    //newdiv.style.border = "1px dashed black";
     newdiv.style.borderRadius = "10px";
     newdiv.style.padding = "5px";
     newdiv.style.zIndex = "100";    
