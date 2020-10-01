@@ -28,8 +28,8 @@ function insert(newdiv, existingNode) {
     var rect = existingNode.getBoundingClientRect();
     newdiv.style.position = "fixed";
     newdiv.style.width = "600px";
-    newdiv.style.top = (rect.top - 3) + "px";
-    newdiv.style.left = (rect.left - 620) + "px";    
+    newdiv.style.top = (rect.top + 20) + "px";
+    newdiv.style.left = (rect.right - 600) + "px";    
     //newdiv.style.left = rect.left + "px";
     newdiv.style.backgroundColor = "#FFFFFF";
     //newdiv.style.border = "1px dashed black";
