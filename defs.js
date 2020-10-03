@@ -10,6 +10,27 @@ var defs =
 	  "page": 4,
 	  "text":
 	  "An interpreted language $L$ is <span class='defined'>effectively formalized</span> iff <ol><li> it has a finite set of basic symbols,</li><li> syntactic properties such as being a term of the language, being a wff, being a wff with one free variable, and being a sentence, are effectively decidable and the syntactic structure of any sentence is effectively determinable, and</li><li> this syntactic structure together with the semantic rules can be used to effectively determine the unique intended interpretation of every sentence.</li></ol>"
+	},
+	{
+	    "n": 3,
+	    "page": 5,
+	    "text":
+	    "An <span class='defined'>effectively axiomatized formal theory</span> $T$ has an effectively formalized language $L$, a certain class of $L$-wffs are picked out as axioms where it is effectively decidable what’s an axiom, and it has a proof system such that it is effectively decidable whether a given array of wffs is indeed a proof from the axioms according to the rules."
+	},
+
+	{
+	    "n": 4,
+	    "page": 5,
+	    "text":
+	    "<span class='defined'>$T \\vdash \\varphi$</span> says: there is a formal deduction in $T$’s proof system from $T$-axioms to the sentence $\\varphi$ as conclusion (in short, $\\varphi$ is a $T$-theorem)."
+
+	},
+
+	{
+	    "n": 5,
+	    "page": 5,
+	    "text":
+	    "<span class='defined'>$T \\models \\varphi$</span> says: any model (re)interpreting the non-logical vocabulary that makes all the axioms of $T$ true makes $\\varphi$ true."
 	}
     ];
 
