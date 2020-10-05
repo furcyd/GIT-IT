@@ -1,11 +1,8 @@
 /*jshint esversion: 6 */
 
 var shown = [];
-//var rightArrow = "&#9656;";
-//var downArrow  = "&#9662;";
-
-var rightArrow = "r";
-var downArrow  = "d";
+var rightArrow = "\u25B6";
+var downArrow  = "\u25BC";
     
 function formatDef(n)
 {
@@ -33,9 +30,7 @@ function init() {
 
 function clickArrow(e) {
     var arrow = e.target;
-    console.log("'" + arrow.innerHTML+ "'");
-    console.log("'" + arrow.innerText+ "'");    
-    if (arrow.innerText.startsWith(downArrow)) {
+    if (arrow.innerHTML.startsWith(downArrow)) {
 	arrow.innerHTML = rightArrow;
     } else {
 	arrow.innerHTML = downArrow;

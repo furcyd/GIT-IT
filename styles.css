@@ -173,3 +173,7 @@ blockquote.definition ol > li:before {
     width: 50px;
 }
 
+span.arrow {
+    display: inline-block;
+    width: 25px;
+}
