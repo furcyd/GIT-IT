@@ -95,3 +95,84 @@ blockquote.definition ol > li:before {
     font-style: italic;
 }
 
+
+* {
+//    border: 1px solid red;
+}
+
+#th1 {
+  grid-area: th1;
+}
+#th2 {
+  grid-area: th2;
+}
+#th3 {
+  grid-area: th3;
+}
+#t1 {
+    grid-area: t1;
+}
+#b1-2a {
+    grid-area: b1-2a;
+}
+#b1-2b {
+    grid-area: b1-2b;
+}
+#b1-3a {
+    grid-area: b1-3a;
+}
+#b1-3b {
+    grid-area: b1-3b;
+}
+
+
+#container {
+  display: grid;
+  grid-template-areas:
+      'th1 th1   th1'
+      't1  b1-2a th2'
+      't1  b1-2b th2'
+      't1  b1-2b th2'
+      't1  b1-2b th2'	            
+      't1  b1-3a th3'
+      't1  b1-3b th3'
+      't1  b1-3b th3'
+      't1  b1-3b th3';	  
+   
+  grid-gap: 0px;
+  justify-content: start;
+  //background-color: #FFFADA;
+  //padding: 10px;
+  width: auto;
+}
+
+#container > div {
+    //background-color: rgba(255, 255, 255, 0.8);
+    //text-align: center;
+    //padding: 20px 0;
+    font-size: 20px;
+}
+
+.branchleftbottom {
+    height: 10px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;    
+}
+
+
+.branchleft {
+    height: 30px;
+    border-left: 2px solid black;    
+}
+
+.branchbottom {
+    height: 30px;
+}
+
+.trunk, .branch {
+    width: 50px;
+}
+
+.theorem {
+    width: auto;
+}
