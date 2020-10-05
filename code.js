@@ -1,7 +1,12 @@
 /*jshint esversion: 6 */
 
 var shown = [];
+//var rightArrow = "&#9656;";
+//var downArrow  = "&#9662;";
 
+var rightArrow = "r";
+var downArrow  = "d";
+    
 function formatDef(n)
 {
     var html = '<p class="header"><strong>Def. ' + n + ':</strong><span class="page">[Page '  + defs[n].page + ']</span></p>' +
@@ -21,6 +26,19 @@ function init() {
 		    e => { showDef(e.target); });		
 	    }
 	}	
+    }
+    var arrow = document.getElementById("arrow1");
+    arrow.addEventListener( 'click', e => clickArrow(e) ); 
+}
+
+function clickArrow(e) {
+    var arrow = e.target;
+    console.log("'" + arrow.innerHTML+ "'");
+    console.log("'" + arrow.innerText+ "'");    
+    if (arrow.innerText.startsWith(downArrow)) {
+	arrow.innerHTML = rightArrow;
+    } else {
+	arrow.innerHTML = downArrow;
     }
 }
 
