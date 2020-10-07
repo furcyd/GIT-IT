@@ -88,7 +88,7 @@ function displayDefinitions(order) {
 
     list.innerHTML = elements;
     definitionsDiv.appendChild(list);
-    console.log(list);
+    MathJax.Hub.Typeset();    
 }
 /*
       <ul>

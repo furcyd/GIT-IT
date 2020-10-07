@@ -47,14 +47,18 @@ p, li {
     float: right;
 
 }
-#sidebar ul {
-    list-style: inside;
+#definitions ul {
+  //  list-style: inside;
 }
 
-#sidebar ul {
-    list-style: inside;
+#definitions ul {
+  //  list-style: inside;
 }
-#sidebar li {
+
+#definitions ol {
+//    list-style: inside;
+}
+#definitions li {
     padding-bottom: 8px;
 }
 
