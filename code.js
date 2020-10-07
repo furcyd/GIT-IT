@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 
 var shown = [];
+var definitionOrder = "alpha";
 var rightArrow = "\u25B6";
 var downArrow  = "\u25BC";
     
@@ -12,6 +13,24 @@ function formatDef(n)
 }
 
 function init() {
+
+    // radiobuttons
+
+    var radiobuttons = document.querySelectorAll("input[type=radio]"),
+	n = radiobuttons.length;
+    for (var n = 0; n < radiobuttons.length; n++) {
+        radiobuttons[n].addEventListener("change",function() {
+            if (this.name == "defOrder") {
+		var order = document.querySelector('input[name = "defOrder"]:checked').value;;
+		orderDefinitions(order)	
+
+	    }
+	},0);
+    }
+
+    // definitions
+    
+    
     var words = document.getElementsByTagName("span");    
     for( var i = 0; i < words.length; i++) {
 	var word = words[i];
@@ -28,6 +47,9 @@ function init() {
     arrow.addEventListener( 'click', e => clickArrow(e) ); 
 }
 
+function orderDefinitions(order) {
+    console.log(order);
+}
 function clickArrow(e) {
     var arrow = e.target;
     if (arrow.innerHTML.startsWith(downArrow)) {
