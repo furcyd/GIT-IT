@@ -21,16 +21,16 @@ function init() {
     for (var n = 0; n < radiobuttons.length; n++) {
         radiobuttons[n].addEventListener("change",function() {
             if (this.name == "defOrder") {
-		var order = document.querySelector('input[name = "defOrder"]:checked').value;;
+		var order = document
+		    .querySelector('input[name = "defOrder"]:checked').value;
 		orderDefinitions(order)	
-
 	    }
 	},0);
     }
 
+    orderDefinitions("alpha");
+    /*
     // definitions
-    
-    
     var words = document.getElementsByTagName("span");    
     for( var i = 0; i < words.length; i++) {
 	var word = words[i];
@@ -43,13 +43,63 @@ function init() {
 	    }
 	}	
     }
+    */
     var arrow = document.getElementById("arrow1");
     arrow.addEventListener( 'click', e => clickArrow(e) ); 
 }
 
 function orderDefinitions(order) {
-    console.log(order);
+    if (order == "alpha")
+	defs.sort( function(a,b) {
+	    if (a["term"] < b["term"]) return -1;
+	    else if (a["term"] == b["term"]) return 0;
+	    else return 1;
+	});
+    else // chrono
+	defs.sort( function(a,b) {
+	    if (a["n"] < b["n"]) return -1;
+	    else if (a["n"] == b["n"]) return 0;
+	    else return 1;
+	});
+    //console.log(order);
+    displayDefinitions(order);
 }
+
+function displayDefinitions(order) {
+    var definitionsDiv = document.getElementById("definitions");
+    definitionsDiv.removeChild(definitionsDiv.lastChild);
+    var list;
+    var elements = "";
+    if (order == "chrono") {
+	list = document.createElement("ol");
+	for( var d = 1; d < defs.length; d++) {
+	    elements += '<li><span class="hasdefinition def"' +
+		defs[d].h + ">" + defs[d].term +"</span></li>";
+	}
+    }
+    else {
+	list = document.createElement("ul");
+	for( var d = 1; d < defs.length; d++) {
+	    elements += '<li><span class="hasdefinition def"' +
+		defs[d].h + ">" + defs[d].term +"</span></li>";
+	}
+	
+    }
+
+    list.innerHTML = elements;
+    definitionsDiv.appendChild(list);
+    console.log(list);
+}
+/*
+      <ul>
+	<li><span class="hasdefinition def1">effectively decidable</span></li>
+	<li><span class="hasdefinition def2">effectively formalized</span></li>
+	<li><span class="hasdefinition def3">effectively axiomatized formal theory</span></li>
+	<li><span class="hasdefinition def4">$\vdash$ or turnstile symbol </span></li>
+	<li><span class="hasdefinition def5">$\models$ or double turnstile symbol </span></li>	
+      </ul>
+
+*/
 function clickArrow(e) {
     var arrow = e.target;
     if (arrow.innerHTML.startsWith(downArrow)) {
