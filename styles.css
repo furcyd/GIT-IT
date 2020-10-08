@@ -3,10 +3,16 @@
     padding: 0;
 }
 
+html {
+        height: 100%;
+}
+
+
 body {
     font-size: 62.5%;
     font-family: Garamond, sans-serif;
     background: url(images/content-bg.png) right repeat-y #FFFADA;
+    height: 100%;
 }
 
 h1 {
@@ -23,9 +29,11 @@ p, li {
     font-size: 1.6em;
 }
 
+/*
 .clear {
     clear: both;
 }
+*/
 
 #header {
     background: #e3da9d;
@@ -34,29 +42,45 @@ p, li {
 }
 
 #content {
-    padding: 15px 30px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    //padding: 15px 30px 0 0;
+    height: 100%;
 }
 #main-content {
-    margin-right: 175px;
-    max-width: 600px;
-    padding: 10px;
+    //margin-right: 175px;
+    //max-width: 600px;
+    //padding: 10px;
 }
 
-#definitions {
+#sidebar {
+    background-color: red;
     width: 240px;
-    float: right;
+    //float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+   // top: 40px; /* Header Height */
+   //bottom: 20px; /* Footer Height */
+}
 
+#definitions, #theorems {
+    margin: 10px;
+        background-color: blue;
+    flex: 1 1 auto;
 }
 #definitions ul {
-  //  list-style: inside;
+    list-style: inside;
 }
 
 #definitions ul {
-  //  list-style: inside;
+    list-style: inside;
 }
 
 #definitions ol {
-//    list-style: inside;
+    list-style: inside;
 }
 #definitions li {
     padding-bottom: 8px;

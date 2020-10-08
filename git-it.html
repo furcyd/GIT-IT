@@ -20,28 +20,13 @@
   </head>
 
   <body onload="init()">
-    <div>
-        <div id="header">
-    <h1>A proof of Godel's incompleteness theorems </h1>
-  </div>
-	
-  <div id="content">
-    <div id="definitions">
-      <h3>Definitions</h3>
-
-      <hr/>
-      <p>
-	<input type="radio" id="defAlpha" name="defOrder" value="alpha" checked>
-	<label for="defAlpha">Alphabetic order</label></p>
-
-      <p>
-        <input type="radio" id="defChrono" name="defOrder" value="chrono">
-      <label for="defChrono">Chronological order</label></p>
-      <hr/>
-      <br />
-      <div id="dummyDivUsedInInit"></div>
-    </div>
     
+    <div id="header">
+      <h1>A proof of Godel's incompleteness theorems </h1>
+    </div>
+	
+    <div id="content">
+	    
     <div id="main-content">
 
       <div id="container">
@@ -58,8 +43,37 @@
       </div>
 
     </div>
-		
-    <div class="clear"></div>
+
+    	  <div id="sidebar">
+	    <div id="definitions">
+	      <h3>Definitions</h3>
+	      
+	      <hr/>
+	      <p>
+		<input type="radio" id="defAlpha" name="defOrder" value="alpha" checked>
+		<label for="defAlpha">Alphabetic order</label></p>
+	      
+	      <p>
+		<input type="radio" id="defChrono" name="defOrder" value="chrono">
+		<label for="defChrono">Chronological order</label></p>
+	      <hr/>
+	      <br />
+	      <div id="dummyDivUsedInInit"></div>
+	    </div>
+
+	      <div id="theorems">
+	      <h3>Theorems</h3>
+	      <ul>
+		<li>test</li>
+		<li>test</li>
+		<li>test</li>
+		<li>test</li>
+		<li>test</li>		
+	      </ul>
+	    </div>
+	  </div>
+
+<!--    <div class="clear"></div> -->
   </div>
 
   
@@ -67,7 +81,7 @@
 
 
 	 
-    </div>
+
   </body>
 </html>
 
