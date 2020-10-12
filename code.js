@@ -14,6 +14,8 @@ function formatDef(n)
 
 function init() {
 
+    displayTheorems();
+    
     // radiobuttons
 
     var radiobuttons = document.querySelectorAll("input[type=radio]"),
@@ -74,14 +76,14 @@ function displayDefinitions(order) {
 	list = document.createElement("ol");
 	for( var d = 1; d < defs.length; d++) {
 	    elements += '<li><span class="hasdefinition def"' +
-		defs[d].h + ">" + defs[d].term +"</span></li>";
+		defs[d].n + ">" + defs[d].term +"</span></li>";
 	}
     }
     else {
 	list = document.createElement("ul");
 	for( var d = 1; d < defs.length; d++) {
 	    elements += '<li><span class="hasdefinition def"' +
-		defs[d].h + ">" + defs[d].term +"</span></li>";
+		defs[d].n + ">" + defs[d].term +"</span></li>";
 	}
 	
     }
@@ -90,6 +92,23 @@ function displayDefinitions(order) {
     definitionsDiv.appendChild(list);
     MathJax.Hub.Typeset();    
 }
+
+function displayTheorems(order) {
+    var theoremsDiv = document.getElementById("theorems");
+    theoremsDiv.removeChild(theoremsDiv.lastChild);
+    var elements = "";
+    var list = document.createElement("ol");
+    for( var t = 1; t <  theorems.length; t++)
+    {
+	elements += '<li><span id="theorem' +
+	    theorems[t].n + '">Theorem ' + theorems[t].n +"</span></li>";
+    }
+    list.innerHTML = elements;
+    theoremsDiv.appendChild(list);
+    MathJax.Hub.Typeset();    
+}
+
+
 /*
       <ul>
 	<li><span class="hasdefinition def1">effectively decidable</span></li>

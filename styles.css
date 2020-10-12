@@ -95,6 +95,11 @@ p, li {
     font-style: italic;
 }
 
+#theorems ol {
+    list-style: inside;
+}
+
+
 p.header {
     display: flex;
     justify-content: space-between;
