@@ -14,7 +14,7 @@ function formatDef(n)
 
 function init() {
 
-    displayTheorems();
+    displayTheoremList();
     
     // radiobuttons
 
@@ -93,21 +93,37 @@ function displayDefinitions(order) {
     MathJax.Hub.Typeset();    
 }
 
-function displayTheorems(order) {
+function displayTheoremList(order) {
     var theoremsDiv = document.getElementById("theorems");
     theoremsDiv.removeChild(theoremsDiv.lastChild);
     var elements = "";
     var list = document.createElement("ol");
     for( var t = 1; t <  theorems.length; t++)
     {
-	elements += '<li><span id="theorem' +
-	    theorems[t].n + '">Theorem ' + theorems[t].n +"</span></li>";
+	var id = '"theorem' + theorems[t].n + '"';
+	elements += '<li><span id=' + id + '>Theorem ' +
+	    theorems[t].n +"</span></li>";
     }
     list.innerHTML = elements;
     theoremsDiv.appendChild(list);
+    for(var t = 1; t <  theorems.length; t++)
+    {
+	var id = 'theorem' + theorems[t].n;
+	var element = document.getElementById(id);
+	element.addEventListener('click', e => { displayTheorem(e.target); });
+    }
+	
+
     MathJax.Hub.Typeset();    
 }
 
+function displayTheorem(span)
+{
+    var index = span.innerText.indexOf(" ");
+    var number = Number.parseInt( span.innerText.substr(index));
+    var statement = theorems[number].text;
+    console.log(statement);
+}
 
 /*
       <ul>
