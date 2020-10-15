@@ -94,7 +94,7 @@ function displayDefinitions(order) {
 }
 
 function displayTheoremList(order) {
-    var theoremsDiv = document.getElementById("theorems");
+    var theoremsDiv = document.getElementById("theoremslist");
     theoremsDiv.removeChild(theoremsDiv.lastChild);
     var elements = "";
     var list = document.createElement("ol");

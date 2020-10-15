@@ -24,7 +24,7 @@ h3 {
     font-size: 2.0em;
     text-align: center;
     font-style: italic;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
 }
 p, li {
     font-size: 1.6em;
@@ -65,8 +65,7 @@ p, li {
     font-style: italic;
 }
 
-#definitions, #theorems, #test {
-    overflow: auto;
+#definitions, #theorems {
     flex-grow: 1;
     flex-basis: 0;
     margin: 3px;
@@ -206,4 +205,19 @@ span.arrow {
 
 input[type="radio"] {
     margin-left: 10px;
+}
+
+#theorems {
+    display: flex;
+    flex-direction : column;
+}
+#theoremsheader {
+    height: 25px;
+}
+
+#theoremslist {
+    overflow: auto;
+    flex-grow: 1;
+    flex-basis: 0;
+
 }
