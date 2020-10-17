@@ -18,7 +18,7 @@ var theorems =
 	  "n": 3,
 	  "page": 16,
 	  "text":
-	  "Suppose $T$ is an effectively axiomatized formal theory, and suppose we are given a G&‌ouml;cdel-numbering scheme. Then the corresponding properties/relations Wff, Sent, Prf are effectively decidable."
+	  "Suppose $T$ is an effectively axiomatized formal theory, and suppose we are given a G&‌ouml;del-numbering scheme. Then the corresponding properties/relations Wff, Sent, Prf are effectively decidable."
 	},
 
 	{

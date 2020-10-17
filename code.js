@@ -97,7 +97,7 @@ function displayTheoremList(order) {
     var theoremsDiv = document.getElementById("theoremslist");
     theoremsDiv.removeChild(theoremsDiv.lastChild);
     var elements = "";
-    var list = document.createElement("ol");
+    var list = document.createElement("ul");
     for( var t = 1; t <  theorems.length; t++)
     {
 	var id = '"theorem' + theorems[t].n + '"';
@@ -111,11 +111,16 @@ function displayTheoremList(order) {
 	var id = 'theorem' + theorems[t].n;
 	var element = document.getElementById(id);
 	element.addEventListener('click', e => { displayTheorem(e.target); });
+	element.addEventListener('mouseenter',
+				 e => { e.target.classList.add("bold"); });
+	element.addEventListener('mouseleave',
+				 e => { e.target.classList.remove("bold"); });		
     }
 	
 
     MathJax.Hub.Typeset();    
 }
+
 
 function displayTheorem(span)
 {
