@@ -127,7 +127,9 @@ function displayTheorem(span)
     var index = span.innerText.indexOf(" ");
     var number = Number.parseInt( span.innerText.substr(index));
     var statement = theorems[number].text;
-    console.log(statement);
+    var newdiv = document.createElement("div");
+    newdiv.innerHTML = statement;
+    insertNextTo(newdiv, span);
 }
 
 /*
@@ -149,11 +151,12 @@ function clickArrow(e) {
     }
 }
 
-function insert(newdiv, existingNode) {
+
+function insertNextTo(newdiv, existingNode) {
     var rect = existingNode.getBoundingClientRect();
     newdiv.style.position = "fixed";
-    newdiv.style.width = "600px";
-    newdiv.style.top = (rect.top + 20) + "px";
+    newdiv.style.width = "800px";
+    newdiv.style.top = (rect.bottom) + "px";
     newdiv.style.left = (rect.right - 600) + "px";    
     //newdiv.style.left = rect.left + "px";
     newdiv.style.backgroundColor = "#FFFFFF";
@@ -161,7 +164,7 @@ function insert(newdiv, existingNode) {
     newdiv.style.borderRadius = "10px";
     newdiv.style.padding = "5px";
     newdiv.style.zIndex = "100";    
-    newdiv.addEventListener('mouseleave', e => { hideDef(newdiv); });
+    newdiv.addEventListener('click', e => { hideDef(newdiv); });
     existingNode.parentNode.appendChild(newdiv);
     hideAllOthers();
     MathJax.Hub.Typeset();
@@ -190,6 +193,8 @@ function showDef(word) {
     newdiv.innerHTML = formatDef(defnum);
     insert(newdiv, word);
 }
+
+
 
 function hideDef(word) {
     word.parentNode.lastChild.remove();
