@@ -231,3 +231,13 @@ input[type="radio"] {
 .unbold {
     font-weight: regular;
 }
+
+
+.theoremstatement {
+    position: relative;
+    width: 255px;
+    background-color: #FFF0DA;
+    border: 1px dashed black;
+    border-radius: 10px;
+    padding: 5px;
+}
