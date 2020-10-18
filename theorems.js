@@ -20,7 +20,7 @@ var theorems =
 	  "n": 3,
 	  "page": 16,
 	  "text":
-	  "Suppose $T$ is an effectively axiomatized formal theory, and suppose we are given a G&‌ouml;del-numbering scheme. Then the corresponding properties/relations Wff, Sent, Prf are effectively decidable.",
+	  "Suppose $T$ is an effectively axiomatized formal theory, and suppose we are given a G&ouml;del-numbering scheme. Then the corresponding properties/relations Wff, Sent, Prf are effectively decidable.",
 	  "displayed": false
 	},
 
@@ -29,7 +29,7 @@ var theorems =
 	  "n": 4,
 	  "page": 17,
 	  "text":
-	    "Suppose $T$ is an effectively axiomatized theory which includes the language of basic arithmetic, and suppose we have fixed on a G&‌ouml;del-numbering scheme. Then $T$ can express the corresponding numerical property Prf using some arithmetical wff <code>Prf(x, y)</code>.",
+	    "Suppose $T$ is an effectively axiomatized theory which includes the language of basic arithmetic, and suppose we have fixed on a G&ouml;del-numbering scheme. Then $T$ can express the corresponding numerical property Prf using some arithmetical wff <code>Prf(x, y)</code>.",
 	  "displayed": false
 	}
     ];
