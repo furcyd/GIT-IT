@@ -126,11 +126,15 @@ function displayTheorem(span)
 {
     var index = span.innerText.indexOf(" ");
     var number = Number.parseInt( span.innerText.substr(index));
-    var statement = theorems[number].text;
-    var newdiv = document.createElement("div");
-    newdiv.classList.add("theoremstatement")
-    newdiv.innerHTML = statement;
-    insertNextTo(newdiv, span);
+    if (! theorems[number].display)
+    {
+	var statement = theorems[number].text;
+	var newdiv = document.createElement("div");
+	newdiv.classList.add("theoremstatement")
+	newdiv.innerHTML = statement;
+	myInsert(newdiv, span);
+	theorems[number].display = true;
+    }
 }
 
 /*
@@ -153,12 +157,10 @@ function clickArrow(e) {
 }
 
 
-function insertNextTo(newdiv, existingNode) {
+function myInsert(newdiv, existingNode) {
     var rect = existingNode.getBoundingClientRect();
-
     /*
-    newdiv.style.position = "relative";
-    newdiv.style.width = "255px";
+
     //newdiv.style.top = (rect.bottom) + "px";
     //newdiv.style.left = (rect.right - 600) + "px";    
     //newdiv.style.left = rect.left + "px";
@@ -168,13 +170,17 @@ function insertNextTo(newdiv, existingNode) {
     newdiv.style.borderRadius = "10px";
     newdiv.style.padding = "5px";
     newdiv.style.zIndex = "100";    
-*/
-    newdiv.addEventListener('click', e => { hideDef(newdiv); });
+    */
+    //newdiv.style.position = "relative";
+    //newdiv.style.width = "255px";
+    
+    newdiv.addEventListener('click', e => { hideTheorem(newdiv); });
     //existingNode.parentNode.appendChild(newdiv);
     insertAfter(newdiv,existingNode);
     //hideAllOthers();
+    //shown.push(newdiv);
     MathJax.Hub.Typeset();
-    shown.push(newdiv);
+
 
 }
 
@@ -207,5 +213,12 @@ function showDef(word) {
 
 
 function hideDef(word) {
+    word.parentNode.lastChild.remove();
+}
+
+function hideTheorem(word) {
+    var span = word.previousSibling;
+    var number = span.id.substring(7);
+    theorems[number].display = false;
     word.parentNode.lastChild.remove();
 }
