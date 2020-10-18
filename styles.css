@@ -232,11 +232,15 @@ input[type="radio"] {
     font-style: normal;
 }
 
-.unbold {
-    font-weight: regular;
+.large {
+    font-size: 1.4em;
 }
 
-
+.overbar {
+    text-decoration: overline;
+    //border-top: 2px solid black;
+    //padding: 0px;
+}
 .theoremstatement {
     position: relative;
     width: 255px;

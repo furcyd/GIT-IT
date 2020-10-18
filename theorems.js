@@ -18,20 +18,30 @@ var theorems =
 
 	{ "term": "",
 	  "n": 3,
-	  "page": 16,
+	  "page": 17,
 	  "text":
 	  "Suppose $T$ is an effectively axiomatized formal theory, and suppose we are given a G&ouml;del-numbering scheme. Then the corresponding properties/relations <span class='normal'>Wff</span>, <span class='normal'>Sent</span>, <span class='normal'>Prf</span> are effectively decidable.",
 	  "displayed": false
 	},
 
 	{
-	   "term": "",
-	  "n": 4,
-	  "page": 17,
-	  "text":
+	    "term": "",
+	    "n": 4,
+	    "page": 18,
+	    "text":
 	    "Suppose $T$ is an effectively axiomatized theory which includes the language of basic arithmetic, and suppose we have fixed on a G&ouml;del-numbering scheme. Then $T$ can express the corresponding numerical property <span class='normal'>Prf</span> using some arithmetical wff <code>Prf(x, y)</code>.",
-	  "displayed": false
+	    "displayed": false
+	},
+
+	{
+	    "term": "",
+	    "n": 5,
+	    "page": 18,
+	    "text":
+	    "We can construct a G&ouml;del sentence $G_T$ for the theory $T$ in the language of basic arithmetic with the following property: $G_T$ is true if and only if &not;<code class='large normal'>Prov</code>$_T($<code class='normal large'>g&#773;</code>$)$ is true, where $g$ is the code number of $G_T$.",
+	    "displayed": false
 	}
+
     ];
 
 
