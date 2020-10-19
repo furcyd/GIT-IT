@@ -40,7 +40,45 @@ var theorems =
 	    "text":
 	    "We can construct a G&ouml;del sentence $G_T$ for the theory $T$ in the language of basic arithmetic with the following property: $G_T$ is true if and only if &not;<code class='large normal'>Prov</code>$_T($<code class='normal large'>g&#773;</code>$)$ is true, where $g$ is the code number of $G_T$.",
 	    "displayed": false
+	},
+
+	{
+	    "term": "",
+	    "n": 6,
+	    "page": 22,
+	    "text":
+		    "Any consistent, negation-complete, effectively axiomatized formal theory is decidable.",
+	    "displayed": false
+	},
+
+	{
+	    "term": "",
+	    "n": 7,
+	    "page": 24,
+	    "text":
+	    "No consistent, effectively axiomatized and sufficiently strong formal theory is decidable.",
+	    "displayed": false
+	},
+
+	{
+	    "term": "",
+	    "n": 8,
+	    "page": 26,
+	    "text":
+	    "A consistent, effectively axiomatized, sufficiently strong, formal theory cannot be negation complete.",
+	    "displayed": false
+	},
+
+	{
+	    "term": "",
+	    "n": 9,
+	    "page": 32,
+	    "text":
+	    "Suppose $\\tau$ is a term of $L_B$ and suppose the value of $\\tau$ on the intended interpretation of the symbols is $t$. Then $BA \\vdash \\tau=$ <code class='normal large'>t&#773;</code>.",
+	    "displayed": false
 	}
+	
+
 
     ];
 

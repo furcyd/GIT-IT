@@ -236,10 +236,9 @@ input[type="radio"] {
     font-size: 1.4em;
 }
 
-.overbar {
+.overline {  // or use the &#773; character afterward
     text-decoration: overline;
-    //border-top: 2px solid black;
-    //padding: 0px;
+    //border-top: 1px solid black;
 }
 .theoremstatement {
     position: relative;
