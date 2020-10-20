@@ -75,22 +75,34 @@ function displayDefinitions(order) {
     if (order == "chrono") {
 	list = document.createElement("ol");
 	for( var d = 1; d < defs.length; d++) {
-	    elements += '<li><span class="hasdefinition def"' +
-		defs[d].n + ">" + defs[d].term +"</span></li>";
+	    elements += '<li><span id="def' +
+		defs[d].n + '">' + defs[d].term +"</span></li>";
 	}
     }
     else {
 	list = document.createElement("ul");
 	for( var d = 1; d < defs.length; d++) {
-	    elements += '<li><span class="hasdefinition def"' +
-		defs[d].n + ">" + defs[d].term +"</span></li>";
+	    elements += '<li><span id="def' +
+		defs[d].n + '">' + defs[d].term +"</span></li>";
 	}
 	
     }
 
     list.innerHTML = elements;
     definitionsDiv.appendChild(list);
-    MathJax.Hub.Typeset();    
+    MathJax.Hub.Typeset();
+
+    for(var d = 1; d <  defs.length; d++)
+    {
+	var id = 'def' + defs[d].n;
+	var element = document.getElementById(id);
+	element.addEventListener('click', e => { displayDefinition(e.target); });
+	element.addEventListener('mouseenter',
+				 e => { e.target.classList.add("bold"); });
+	element.addEventListener('mouseleave',
+				 e => { e.target.classList.remove("bold"); });		
+    }
+
 }
 
 function displayTheoremList(order) {
@@ -132,8 +144,24 @@ function displayTheorem(span)
 	var newdiv = document.createElement("div");
 	newdiv.classList.add("theoremstatement")
 	newdiv.innerHTML = statement;
-	myInsert(newdiv, span);
+	insertTheorem(newdiv, span);
 	theorems[number].display = true;
+    }
+}
+
+
+
+function displayDefinition(span)
+{
+    var number = span.id.substr(3);
+    if (! defs[number].display)
+    {
+	var statement = defs[number].text;
+	var newdiv = document.createElement("div");
+	newdiv.classList.add("defstatement")
+	newdiv.innerHTML = statement;
+	insertDefinition(newdiv, span);
+	defs[number].display = true;
     }
 }
 
@@ -157,31 +185,19 @@ function clickArrow(e) {
 }
 
 
-function myInsert(newdiv, existingNode) {
+function insertTheorem(newdiv, existingNode) {
     var rect = existingNode.getBoundingClientRect();
-    /*
-
-    //newdiv.style.top = (rect.bottom) + "px";
-    //newdiv.style.left = (rect.right - 600) + "px";    
-    //newdiv.style.left = rect.left + "px";
-    //newdiv.style.right = 500 + "px";    
-    newdiv.style.backgroundColor = "#FFFFFF";
-    //newdiv.style.border = "1px dashed black";
-    newdiv.style.borderRadius = "10px";
-    newdiv.style.padding = "5px";
-    newdiv.style.zIndex = "100";    
-    */
-    //newdiv.style.position = "relative";
-    //newdiv.style.width = "255px";
-    
     newdiv.addEventListener('click', e => { hideTheorem(newdiv); });
-    //existingNode.parentNode.appendChild(newdiv);
     insertAfter(newdiv,existingNode);
-    //hideAllOthers();
-    //shown.push(newdiv);
     MathJax.Hub.Typeset();
+}
 
 
+function insertDefinition(newdiv, existingNode) {
+    var rect = existingNode.getBoundingClientRect();
+    newdiv.addEventListener('click', e => { hideDefinition(newdiv); });
+    insertAfter(newdiv,existingNode);
+    MathJax.Hub.Typeset();
 }
 
 
@@ -212,13 +228,17 @@ function showDef(word) {
 
 
 
-function hideDef(word) {
-    word.parentNode.lastChild.remove();
-}
-
 function hideTheorem(word) {
     var span = word.previousSibling;
     var number = span.id.substring(7);
     theorems[number].display = false;
+    word.parentNode.lastChild.remove();
+}
+
+
+function hideDefinition(word) {
+    var span = word.previousSibling;
+    var number = span.id.substring(3);
+    defs[number].display = false;
     word.parentNode.lastChild.remove();
 }
