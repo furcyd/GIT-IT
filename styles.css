@@ -240,7 +240,8 @@ input[type="radio"] {
     text-decoration: overline;
     //border-top: 1px solid black;
 }
-.theoremstatement {
+
+.theoremstatement, .defstatement {
     position: relative;
     width: 255px;
     background-color: #FFF0DA;

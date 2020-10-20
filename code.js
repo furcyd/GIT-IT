@@ -1,3 +1,4 @@
+
 /*jshint esversion: 6 */
 
 var shown = [];
@@ -165,16 +166,6 @@ function displayDefinition(span)
     }
 }
 
-/*
-      <ul>
-	<li><span class="hasdefinition def1">effectively decidable</span></li>
-	<li><span class="hasdefinition def2">effectively formalized</span></li>
-	<li><span class="hasdefinition def3">effectively axiomatized formal theory</span></li>
-	<li><span class="hasdefinition def4">$\vdash$ or turnstile symbol </span></li>
-	<li><span class="hasdefinition def5">$\models$ or double turnstile symbol </span></li>	
-      </ul>
-
-*/
 function clickArrow(e) {
     var arrow = e.target;
     if (arrow.innerHTML.startsWith(downArrow)) {
