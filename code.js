@@ -17,8 +17,6 @@ function init() {
 
     displayTheoremList();
     
-    // radiobuttons
-
     var radiobuttons = document.querySelectorAll("input[type=radio]"),
 	n = radiobuttons.length;
     for (var n = 0; n < radiobuttons.length; n++) {
@@ -32,21 +30,7 @@ function init() {
     }
 
     orderDefinitions("alpha");
-    /*
-    // definitions
-    var words = document.getElementsByTagName("span");    
-    for( var i = 0; i < words.length; i++) {
-	var word = words[i];
-	var classes = word.className.split(/\s+/);
-	for (var c = 0; c < classes.length; c++) {
-	    if (classes[c].startsWith("def")) {
-		word.addEventListener(
-		    'mouseenter',
-		    e => { showDef(e.target); });		
-	    }
-	}	
-    }
-    */
+
     var arrow = document.getElementById("arrow1");
     arrow.addEventListener( 'click', e => clickArrow(e) ); 
 }
@@ -64,7 +48,6 @@ function orderDefinitions(order) {
 	    else if (a["n"] == b["n"]) return 0;
 	    else return 1;
 	});
-    //console.log(order);
     displayDefinitions(order);
 }
 
@@ -75,20 +58,13 @@ function displayDefinitions(order) {
     var elements = "";
     if (order == "chrono") {
 	list = document.createElement("ol");
-	for( var d = 1; d < defs.length; d++) {
-	    elements += '<li><span id="def' +
-		defs[d].n + '">' + defs[d].term +"</span></li>";
-	}
-    }
-    else {
+    } else {
 	list = document.createElement("ul");
-	for( var d = 1; d < defs.length; d++) {
-	    elements += '<li><span id="def' +
-		defs[d].n + '">' + defs[d].term +"</span></li>";
-	}
-	
     }
-
+    for( var d = 1; d < defs.length; d++) {
+	elements += '<li><span id="def' +
+	    defs[d].n + '">' + defs[d].term +"</span></li>";
+    }
     list.innerHTML = elements;
     definitionsDiv.appendChild(list);
     MathJax.Hub.Typeset();
@@ -151,13 +127,15 @@ function displayTheorem(span)
 }
 
 
-
+var tmp;
 function displayDefinition(span)
 {
-    var number = span.id.substr(3);
+    var number = parseInt(span.id.substr(3));
+    var index = defs.map(function(e) { return e.n; }).indexOf(number);
+    var statement = defs[index].text;
+    
     if (! defs[number].display)
     {
-	var statement = defs[number].text;
 	var newdiv = document.createElement("div");
 	newdiv.classList.add("defstatement")
 	newdiv.innerHTML = statement;
