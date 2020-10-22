@@ -10,26 +10,29 @@ html {
 
 
 body {
-    font-size: 62.5%;
+    font-size: 100%;
     font-family: Garamond, sans-serif;
     background: url(images/content-bg.png) right repeat-y #FFFADA;
     height: 100%;
 }
 
 h1 {
-    font-size: 4.0em;
+    font-size: 2a.0em;
 }
 
 h3 {
-    font-size: 2.0em;
+    font-size: 1.3em;
     text-align: center;
     font-style: italic;
     padding-bottom: 0px;
 }
-p, li {
-    font-size: 1.6em;
+p {
+   // font-size: 1.6em;
 }
 
+#definitions > li {
+//     font-size: 1.6em;
+}
 /*
 .clear {
     clear: both;
