@@ -99,7 +99,9 @@ function displayTheoremList(order) {
     {
 	var id = 'theorem' + theorems[t].n;
 	var element = document.getElementById(id);
-	element.addEventListener('click', e => { displayTheorem(e.target); });
+	element.addEventListener('click', e => { processClick(e); });
+
+	element.addEventListener('dblclick', e => { displayDependencies(e.target); });	
 	element.addEventListener('mouseenter',
 				 e => { e.target.classList.add("bold"); });
 	element.addEventListener('mouseleave',
@@ -111,8 +113,25 @@ function displayTheoremList(order) {
 }
 
 
+function displayDependencies(element)
+{
+    console.log(element);
+}
+
+
+function processClick(event)
+{
+    if (event.shiftKey)
+	displayDependencies(event.target);
+    else
+	displayTheorem(event.target);
+}
+
+
+
 function displayTheorem(span)
 {
+
     var index = span.innerText.indexOf(" ");
     var number = Number.parseInt( span.innerText.substr(index));
     if (! theorems[number].display)
