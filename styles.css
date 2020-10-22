@@ -252,3 +252,8 @@ input[type="radio"] {
     border-radius: 10px;
     padding: 5px;
 }
+
+#definitions .defined {
+    color:  #53aaad;
+    font-weight: bold;
+}
