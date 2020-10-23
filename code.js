@@ -48,12 +48,12 @@ function orderDefinitions(order) {
 	    else if (a["n"] == b["n"]) return 0;
 	    else return 1;
 	});
-    displayDefinitions(order);
+    displayDefinitionList(order);
 }
 
-function displayDefinitions(order) {
-    var definitionsDiv = document.getElementById("definitions");
-    definitionsDiv.removeChild(definitionsDiv.lastChild);
+function displayDefinitionList(order) {
+    var definitionsList = document.getElementById("definitionslist");
+    //definitionsDiv.removeChild(definitionsDiv.lastChild);
     var list;
     var elements = "";
     if (order == "chrono") {
@@ -66,7 +66,7 @@ function displayDefinitions(order) {
 	    defs[d].n + '">' + defs[d].term +"</span></li>";
     }
     list.innerHTML = elements;
-    definitionsDiv.appendChild(list);
+    definitionsList.appendChild(list);
     MathJax.Hub.Typeset();
 
     for(var d = 1; d <  defs.length; d++)
@@ -84,7 +84,7 @@ function displayDefinitions(order) {
 
 function displayTheoremList(order) {
     var theoremsDiv = document.getElementById("theoremslist");
-    theoremsDiv.removeChild(theoremsDiv.lastChild);
+    //theoremsDiv.removeChild(theoremsDiv.lastChild);
     var elements = "";
     var list = document.createElement("ul");
     for( var t = 1; t <  theorems.length; t++)
