@@ -39,10 +39,19 @@ var defs =
 	    "term": "logical entailment or $\\models$",
 	    "n": 5,
 	    "page": 5,
-	    "text":
+	    "text": 
 	    "&lsquo; <span class='defined'>$T \\models \\varphi$</span>&rsquo; says: any way of (re)interpreting the non-logical vocabulary that makes all the axioms of $T$ true makes $\\varphi$ true.",
 	    display: false
+	},
+	{
+	    "term": "formally decides",
+	    "n": 6,
+	    "page": 6,
+	    "text":
+	    "If $T$ is a theory, and $\\varphi$ is some sentence of the language of that theory, then T <span class='defined'>formally decides</span>  $\\varphi$ iff either $T \\vdash \\varphi$ or $T \\vdash  &not; \\varphi$",
+	    display: false
 	}
+
     ];
 
 
