@@ -20,7 +20,7 @@ var theorems =
 	  "n": 3,
 	  "page": 17,
 	  "text":
-	  "Suppose $T$ is an effectively axiomatized formal theory, and suppose we are given a G&ouml;del-numbering scheme. Then the corresponding properties/relations <span class='normal'>Wff</span>, <span class='normal'>Sent</span>, <span class='normal'>Prf</span> are effectively decidable.",
+	  "Suppose $T$ is an effectively axiomatized formal theory, and suppose we are given a G&ouml;del-numbering scheme. Then the corresponding numerical properties/relations <span class='normal'>Wff</span>, <span class='normal'>Sent</span>, <span class='normal'>Prf</span> are effectively decidable.",
 	  "displayed": false
 	},
 
