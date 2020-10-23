@@ -21,7 +21,7 @@ var defs =
 	    "n": 3,
 	    "page": 5,
 	    "text":
-	    "An <span class='defined'>effectively axiomatized formal theory</span> $T$ has an effectively formalized language $L$, a certain class of $L$-wffs are picked out as axioms where it is effectively decidable what’s an axiom, and it has a proof system such that it is effectively decidable whether a given array of wffs is indeed a proof from the axioms according to the rules.",
+	    "An <span class='defined'>effectively axiomatized formal theory</span> $T$ has an effectively formalized language $L$, a certain class of $L$-wffs are picked out as axioms where it is effectively decidable what’s an axiom, and it has a proof system such that it is effectively decidable whether a given array of wffs is a derivation from the axioms according to the rules.",
 	  display: false
 	},
 
@@ -30,7 +30,7 @@ var defs =
 	    "n": 4,
 	    "page": 5,
 	    "text":
-	    "<span class='defined'>$T \\vdash \\varphi$</span> says: there is a formal deduction in $T$’s proof system from $T$-axioms to the sentence $\\varphi$ as conclusion (in short, $\\varphi$ is a $T$-theorem).",
+	    "&lsquo; <span class='defined'>$T \\vdash \\varphi$</span>&rsquo; says: there is a formal deduction in $T$’s proof system from $T$-axioms to the sentence $\\varphi$ as conclusion (in short, $\\varphi$ is a $T$-theorem).",
 	  display: false
 
 	},
@@ -40,7 +40,7 @@ var defs =
 	    "n": 5,
 	    "page": 5,
 	    "text":
-	    "<span class='defined'>$T \\models \\varphi$</span> says: any model (re)interpreting the non-logical vocabulary that makes all the axioms of $T$ true makes $\\varphi$ true.",
+	    "&lsquo; <span class='defined'>$T \\models \\varphi$</span>&rsquo; says: any way of (re)interpreting the non-logical vocabulary that makes all the axioms of $T$ true makes $\\varphi$ true.",
 	    display: false
 	}
     ];
