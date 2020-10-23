@@ -66,6 +66,11 @@ function displayDefinitionList(order) {
 	    defs[d].n + '">' + defs[d].term +"</span></li>";
     }
     list.innerHTML = elements;
+
+    var child = definitionsList.firstChild;
+    if (child)
+	definitionsList.removeChild(child);
+    
     definitionsList.appendChild(list);
     MathJax.Hub.Typeset();
 
