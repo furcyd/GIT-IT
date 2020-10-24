@@ -208,7 +208,8 @@ input[type="radio"] {
 }
 
 
-#theorems {
+#theorems ul span, #definitions ul span {
+    margin-left: -10px;
 }
 #theoremsheader {
     height: 25px;
