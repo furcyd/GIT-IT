@@ -26,7 +26,7 @@ var defs =
 	},
 
 	{
-	    "term": "derivability or $\\vdash$",
+	    "term": "formal derivability or $\\vdash$",
 	    "n": 4,
 	    "page": 5,
 	    "text":
@@ -50,7 +50,26 @@ var defs =
 	    "text":
 	    "If $T$ is a theory, and $\\varphi$ is some sentence of the language of that theory, then T <span class='defined'>formally decides</span>  $\\varphi$ iff either $T \\vdash \\varphi$ or $T \\vdash  &not; \\varphi$",
 	    display: false
+	},
+
+	{
+	    "term": "formally undecidable",
+	    "n": 7,
+	    "page": 6,
+	    "text":
+	    "A sentence  $\\varphi$ is formally undecidable by $T$ iff $T \\not\\vdash \\varphi$ and $T \\not\\vdash  &not; \\varphi$.",
+	    display: false
+	},
+
+		{
+	    "term": "negation complete",
+	    "n": 8,
+	    "page": 6,
+	    "text":
+	    "A theory $T$ is negation complete iff it formally decides every closed wff of its language, i.e., for every sentence  $\\varphi$, $T \\vdash \\varphi$ or $T \\vdash  &not; \\varphi$.",
+	    display: false
 	}
+
 
     ];
 
