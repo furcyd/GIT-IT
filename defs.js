@@ -57,7 +57,7 @@ var defs =
 	    "n": 7,
 	    "page": 6,
 	    "text":
-	    "A sentence  $\\varphi$ is formally undecidable by $T$ iff $T \\not\\vdash \\varphi$ and $T \\not\\vdash  &not; \\varphi$.",
+	    "A sentence  $\\varphi$ is  <span class='defined'>formally undecidable</span> by $T$ iff $T \\not\\vdash \\varphi$ and $T \\not\\vdash  &not; \\varphi$.",
 	    display: false
 	},
 
@@ -66,7 +66,7 @@ var defs =
 	    "n": 8,
 	    "page": 6,
 	    "text":
-	    "A theory $T$ is negation complete iff it formally decides every closed wff of its language, i.e., for every sentence  $\\varphi$, $T \\vdash \\varphi$ or $T \\vdash  &not; \\varphi$.",
+	    "A theory $T$ is  <span class='defined'>negation complete</span> iff it formally decides every closed wff of its language, i.e., for every sentence  $\\varphi$, $T \\vdash \\varphi$ or $T \\vdash  &not; \\varphi$.",
 	    display: false
 	}
 

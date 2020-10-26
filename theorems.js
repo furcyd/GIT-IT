@@ -1,5 +1,6 @@
 var theorems =
     [   {}, // not Theorem 0
+
 	{ "term": "",
 	  "n": 1,
 	  "page": 11,
@@ -7,7 +8,8 @@ var theorems =
 	  "Suppose $T$ is a formal axiomatized theory whose language contains the language of basic arithmetic. Then, if $T$ is sound, there will be a true sentence $G_T$ of basic arithmetic such that $T \\nvdash G_T$ and $T \\nvdash &not; \G_T$, so $T$ is negation incomplete.",
 	  "displayed": false
 	},
-
+	
+	
 	{ "term": "",
 	  "n": 2,
 	  "page": 11,

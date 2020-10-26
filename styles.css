@@ -69,7 +69,7 @@ p {
 }
 
 #sidebar ul, #sidebar ol {
-    list-style-position: inside;
+    list-style-position: inside; 
 }
 
 
@@ -103,6 +103,7 @@ blockquote.definition ol > li:before {
   font-weight: bold;
   font-style: italic;  
 }
+
 
 .hasdefinition {
     border-bottom: 2px dotted;
@@ -160,6 +161,7 @@ blockquote.definition ol > li:before {
   width: auto;
 }
 
+
 #container > div {
     //background-color: rgba(255, 255, 255, 0.8);
     //text-align: center;
@@ -196,6 +198,7 @@ input[type="radio"] {
     margin-left: 10px;
 }
 
+
 #definitions, #theorems {
     display: flex;
     flex-direction : column;
@@ -208,9 +211,12 @@ input[type="radio"] {
 }
 
 
+
 #theorems ul span, #definitions ul span {
-    margin-left: -10px;
+//    margin-left: -10px;
 }
+
+
 #theoremsheader {
     height: 25px;
 }
